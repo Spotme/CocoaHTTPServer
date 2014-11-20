@@ -6190,8 +6190,10 @@ static OSStatus SSLWriteFunction(SSLConnectionRef connection, const void *data, 
 	}
 	
 	// 2. kCFStreamSSLAllowsAnyRoot
-	
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 	value = [tlsSettings objectForKey:(NSString *)kCFStreamSSLAllowsAnyRoot];
+#pragma clang diagnostic pop
 	if (value)
 	{
 		#if TARGET_OS_IPHONE
@@ -6211,8 +6213,10 @@ static OSStatus SSLWriteFunction(SSLConnectionRef connection, const void *data, 
 	}
 	
 	// 3. kCFStreamSSLAllowsExpiredRoots
-	
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 	value = [tlsSettings objectForKey:(NSString *)kCFStreamSSLAllowsExpiredRoots];
+#pragma clang diagnostic pop
 	if (value)
 	{
 		#if TARGET_OS_IPHONE
@@ -6253,8 +6257,10 @@ static OSStatus SSLWriteFunction(SSLConnectionRef connection, const void *data, 
 	}
 	
 	// 5. kCFStreamSSLAllowsExpiredCertificates
-	
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 	value = [tlsSettings objectForKey:(NSString *)kCFStreamSSLAllowsExpiredCertificates];
+#pragma clang diagnostic pop
 	if (value)
 	{
 		#if TARGET_OS_IPHONE
