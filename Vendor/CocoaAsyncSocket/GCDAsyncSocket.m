@@ -34,7 +34,7 @@
   #if MAC_OS_X_VERSION_MIN_REQUIRED >= 1080     // Mac OS X 10.8 or later
     #define NEEDS_DISPATCH_RETAIN_RELEASE 0
   #else
-    #define NEEDS_DISPATCH_RETAIN_RELEASE 1     // Mac OS X 10.7 or earlier
+    #define NEEDS_DISPATCH_RETAIN_RELEASE 0     // Mac OS X 10.7 or earlier
   #endif
 
 #endif
